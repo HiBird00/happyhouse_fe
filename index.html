@@ -4,27 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>메인화면</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <form action="" id="juso-search">
-      <select name="city">
-        <option value="none">시/도</option>
-      </select>
-      <select name="gu">
-        <option value="none">시/군/구</option>
-      </select>
-      <select name="dong">
-        <option value="none">읍/면/동</option>
-      </select>
-      <select name="ri">
-        <option value="none">리</option>
-      </select>
-      <input id="juso-search-btn" type="submit" value="검색" />
-    </form>
-    <div class="data-list" style="display: flex; gap: 20px; align-items: flex-start">
+      <div class="main-top">
+        <p><img src="img/Logo.png" alt="" width="200"></p>
+      </div>
+      <div class="main-center">
+          <h3 class="main-center-letters">어디로가고싶으세요?</h3>
+          <div class="main-select-city">
+            <select name="dong"> 
+              <option value="none">동</option>
+            </select>
+            <select name="gu">
+              <option value="none">구</option>
+            </select>
+            <select name="city">
+              <option value="none">시/도</option>
+            </select>
+ 
+          </div>
+          <div class="main-search-btn">
+            <button type="summit" value="main-search-btn"></button>
+          </div>
+      </div>
+      <div class="main-bottom">
+          <button type="summit" value="main-joinus-btn">JOIN-US</button>
+          <button type="summit" value="main-login-btn">LOGIN</button>
+      </div>
+
+
+<!--
+    <div>
       <table>
         <tr>
           <th>아파트</th>
@@ -49,5 +63,6 @@
         <tbody id="store-list"></tbody>
       </table>
     </div>
+-->
   </body>
 </html>
