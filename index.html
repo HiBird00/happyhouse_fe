@@ -24,15 +24,30 @@
       </select>
       <input id="juso-search-btn" type="submit" value="검색" />
     </form>
-    <table>
-      <tr>
-        <th>아파트</th>
-        <th>층</th>
-        <th>면적</th>
-        <th>법정동</th>
-        <th>거래금액</th>
-      </tr>
-      <tbody id="apt-list"></tbody>
-    </table>
+    <div class="data-list" style="display: flex; gap: 20px; align-items: flex-start">
+      <table>
+        <tr>
+          <th>아파트</th>
+          <th>층</th>
+          <th>면적</th>
+          <th>법정동</th>
+          <th>거래금액</th>
+        </tr>
+        <tbody id="apt-list"></tbody>
+      </table>
+      <table>
+        <tr>
+          <th>ID(bizesId)</th>
+          <th>가게명(bizesNm)</th>
+          <th>업종(indsMclsNm)</th>
+          <th>지번주소(lnoAdr)</th>
+          <th>도로명주소(rdnm)</th>
+          <th>우편번호(신)(newZipcd)</th>
+          <th>경도(lon)</th>
+          <th>위도(lat)</th>
+        </tr>
+        <tbody id="store-list"></tbody>
+      </table>
+    </div>
   </body>
 </html>

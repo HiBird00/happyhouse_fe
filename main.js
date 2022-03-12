@@ -36,15 +36,32 @@ $(function () {
         let dong = $("select[name='dong']").val();
         let ri = $("select[name='ri']").val();
         let arr = [city, gu, dong, ri];
-        let code;
-        for (let v of arr) {
-            if (v === 'none') break;
+        let code, index = 0;
+        console.log(arr)
+        arr.forEach((v, idx) => {
+            if (v === "none") return true;
+            index = idx;
             code = v;
-        }
+        })
         if (code) {
-            console.log("code", code);
+            console.log('code', code, index);
             $("#apt-list").empty();
-            getAptList(code.slice(0, 5), code.slice(-5), 201502, 1)
+            getAptList(code.slice(0, 5), code.slice(-5), 201502, 1);
+
+            let divId, key;
+            if (index === 0) {
+                divId = "ctprvnCd"; // 시도
+                key = code.slice(0, 2);
+            } else {
+                divId = "signguCd"; // 시군구, 동, 리
+                key = code.slice(0, 5);
+            }
+            //  else {
+            //     divId = "adongCd"; // 행정동
+            //     key = code;
+            // }
+            $("#store-list").empty();
+            getStoreList(divId, key, 1, index, code);
         }
     })
 })
@@ -87,7 +104,7 @@ function printToSelect(name, response) {
 }
 
 function getAptList(LAWD_CD, DONG_CD, DEAL_YMD, pageNo) {
-    console.log(LAWD_CD, DONG_CD, DEAL_YMD)
+    // console.log(LAWD_CD, DONG_CD, DEAL_YMD)
     let requestData = {
         serviceKey:
             "+sjo5YZ5yUmsPnmqL8EY2DoNkNxNY/n6fEgghhG8zsvw2pVDPBANrAr8MAJNQtYesL6tZtITX06tHL5EmvMxIw==",
@@ -103,7 +120,6 @@ function getAptList(LAWD_CD, DONG_CD, DEAL_YMD, pageNo) {
         data: requestData,
         dataType: "xml",
         success: (response) => {
-            console.log(response);
             let items = $(response).find("item");
             if (items.length) {
                 // 데이터가 있으면 출력
@@ -134,4 +150,60 @@ function makeList(data, DONG_CD) {
     $("#apt-list").append(aptList);
     $("tr:first").css("background", "black").css("color", "white");
     $("tr:even").css("background", "gray");
+}
+
+
+/*****************  상가 정보  *****************/
+/*****************  상가 정보  *****************/
+/*****************  상가 정보  *****************/
+function getStoreList(divId, key, pageNo, index, originCode) {
+    let requestData = {
+        ServiceKey: "+sjo5YZ5yUmsPnmqL8EY2DoNkNxNY/n6fEgghhG8zsvw2pVDPBANrAr8MAJNQtYesL6tZtITX06tHL5EmvMxIw==",
+        pageNo,
+        numOfRows: "100",
+        divId,
+        key,
+        type: 'json'
+    };
+    $.ajax({
+        url: "http://apis.data.go.kr/B553077/api/open/sdsc2/storeListInDong",
+        type: "GET",
+        data: requestData,
+        dataType: "json",
+        success: (response) => {
+            let items = response.body?.items;
+            if (items?.length) {
+                // 데이터가 있으면 출력
+                if (index > 1) {
+                    // api에서의 행정동과 originCode인 법정동의 코드가 서로 달라서 추가적인 filter처리가 필요하다
+                    items = items.filter(item => item.ldongCd === originCode.slice(0, 8) + "00");
+                }
+                makeStoreList(items);
+                getStoreList(divId, key, pageNo + 1, index, originCode);
+            } else {
+                // 데이터가 없으면(pageNo이 초과했으면) 그만
+            }
+        },
+        error: (err) => { console.log(err.responseText) },
+    })
+}
+
+function makeStoreList(data) {
+    let storeList = ``;
+    data.forEach(element => {
+        storeList += `
+            <tr>
+                <td>${element.bizesId}</td>
+                <td>${element.bizesNm}</td>
+                <td>${element.indsMclsNm}</td>
+                <td>${element.lnoAdr}</td>
+                <td>${element.rdnm}</td>
+                <td>${element.newZipcd}</td>
+                <td>${element.lon}</td>
+                <td>${element.lat}</td>
+            </tr>
+        `;
+    });
+
+    $("#store-list").append(storeList);
 }
