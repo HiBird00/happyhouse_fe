@@ -11,13 +11,53 @@
     <title>상권조회</title>
 </head>
 <body>
-    <div>
-        <div calss="serch-left">
-
+    
+        <div class="search-left">
+            <!--로고창 나오기-->
+            <div>
+                <div class="left-top">
+                    <p><img src="img/Logo.png" alt="" width="200"></p>
+                </div>
+            </div>
+            <!--검색창 나오기-->
+            <div class="left-middle-search">
+                <div class="left-select-city">
+                    <select name="dong"> 
+                    <option value="none">동</option>
+                    </select>
+                    <select name="gu">
+                    <option value="none">구</option>
+                    </select>
+                    <select name="city">
+                    <option value="none">시/도</option>
+                    </select>
+                </div>
+                <div class="left-search-btn">
+                    <button type="submit" value="main-search-btn"></button>
+                </div>
+            </div >
+            <!--즐겨찾기 나오기-->
+            <div class="left-middle-likes">
+                <div>
+                    <h2>관심지역을 등록해주세요</h2>
+                </div>
+                <div>
+                    <button id="likes-btn1">즐겨찾기1</button>
+                    <button id="likes-btn2">즐겨찾기2</button>
+                    <button id="likes-btn3">즐겨찾기3</button>
+                </div>
+            </div>
+            <!--주변상권 나오기-->
+            <div class="left-bottom-stores">
+                <div>
+                    <h2>주변상권 입니다</h2>
+                </div>
+                <table></table>
+            </div>
         </div>
         <div class="search-right">
             지도가 나타날 공간입니다.
         </div>
-    </div>
+    
 </body>
 </html>

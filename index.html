@@ -25,16 +25,25 @@
             <select name="city">
               <option value="none">시/도</option>
             </select>
- 
           </div>
           <div class="main-search-btn">
-            <button type="summit" value="main-search-btn"></button>
+            <button type="submit" id="juso-search-btn" value="main-search-btn" ></button>
           </div>
       </div>
       <div class="main-bottom">
           <button type="summit" value="main-joinus-btn">JOIN-US</button>
           <button type="summit" value="main-login-btn">LOGIN</button>
       </div>
+      <table>
+        <tr>
+          <th>아파트</th>
+          <th>층</th>
+          <th>면적</th>
+          <th>법정동</th>
+          <th>거래금액</th>
+        </tr>
+        <tbody id="apt-list"></tbody>
+      </table>
 
 
 <!--
@@ -66,3 +75,4 @@
 -->
   </body>
 </html>
+

@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 30px;
 }
 
+/*---------중앙 검색및 로그인부분----------*/
 .main-center{
     margin-top: 15%;
 }
@@ -33,13 +34,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
     color: white;
 }
+
+/*도시의 시, 구, 동을 선택*/
 .main-select-city{
     float: left;
     width: 65%;
-
     background: none;
 }
-
 .main-select-city select{
     color: #fff;
     background: none;
@@ -51,13 +52,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     border:#fff solid 1px;
 }
-
+/*선택하면 btn*/
 .main-search-btn{
     background: none;
     float: right;
     width: 35%;
 }
-
 .main-search-btn button{
     float: left;
     border: none;
@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;
 }
 
+/*---------하단 로그인부분-----------*/
 .main-bottom{
     padding-top: 3%;
     padding-left: 45%;
