@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <form action="" id="juso-search">
+      <select name="city">
+        <option value="none">시/도</option>
+      </select>
+      <select name="gu">
+        <option value="none">시/군/구</option>
+      </select>
+      <select name="dong">
+        <option value="none">읍/면/동</option>
+      </select>
+      <select name="ri">
+        <option value="none">리</option>
+      </select>
+      <input id="juso-search-btn" type="submit" value="검색" />
+    </form>
+    <table>
+      <tr>
+        <th>아파트</th>
+        <th>층</th>
+        <th>면적</th>
+        <th>법정동</th>
+        <th>거래금액</th>
+      </tr>
+      <tbody id="apt-list"></tbody>
+    </table>
+  </body>
+</html>
