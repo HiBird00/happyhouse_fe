@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0px;
     font-family: 'Lato', sans-serif;
+    white-space: nowrap;
 }
 
 body{
@@ -37,22 +38,22 @@ button{
 }
 .left-select-city{
     float: left;
-    width: 70%;
+    width: 80%;
 }
 .left-select-city select{
     background: none;
     float: right;
     margin: 2px;
-    width: 100px;
+    width: 30%;
     height: 40px;
-    margin-left: 3%;
+    margin-left: 2%;
     font-weight: bold;
     border:#7C9FD0 solid 2px;
 }
 .left-search-btn{
     background: none;
     float: right;
-    width: 30%;
+    width: 20%;
 }
 .left-search-btn button{
     float: left;
@@ -66,14 +67,14 @@ button{
 
 /*관심지역 등록하는 부분입니다*/
 .left-middle-likes{
-    margin-top: 350px;
+    margin-top: 280px;
     text-align: center;
     color:#7C9FD0;
 }
 
 .left-middle-likes button{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: #7C9FD0 2px solid;
     background: none;
     margin-top: 10px;
@@ -82,6 +83,34 @@ button{
 
 /*주변상권입니다*/
 .left-bottom-stores{
-    margin-top: 150px;
+    margin-top: 100px;
 }
+.wrap {
+    overflow-x:scroll; 
+    white-space:nowrap; 
+    margin: 0 auto;
+}
+.wrap > ul{
+    margin-top: 10px;
+}
+.wrap > ul > li 
+{
+    height: 100%;
+    color: #5a5a5a;
+    display:inline-block; 
+    font-size:20px; 
+    width:150px; 
+    height:200px; 
+}
+
+.wrap > ul > li:nth-child(even)
+{
+    background-color:#aebfd7;
+} 
+
+.wrap>ul>li ::-webkit-scrollbar{
+    width: 3px;
+}
+
+
 /*----------------오른쪽 부분(지도)-------------------------*/
