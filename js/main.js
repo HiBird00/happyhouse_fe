@@ -66,8 +66,8 @@ $(function () {
         }
     })
 
-    // getCCTVList();
-    // getHospital();
+    getCCTVList();
+    getHospital();
     getSeoulResidentStat();
 })
 
@@ -227,7 +227,7 @@ const seoulKey = "4955426858776e68363059744f7875";  // 서울 광장 데이터 a
 // cctv 정보를 얻어오는 함수입니다.
 function getCCTVList() {
     let startIdx = 1;
-    let endIdx = 5;
+    let endIdx = 10;
     let gu = "강남구";
     let url = `http://openapi.seoul.go.kr:8088/${seoulKey}/json/safeOpenCCTV/${startIdx}/${endIdx}/${gu}`;
     $.ajax({
@@ -235,7 +235,7 @@ function getCCTVList() {
         type: "GET",
         dataType: "json",
         success: (response) => {
-            console.log(response);
+            console.log("cctv", response);
         }
     })
 }
@@ -243,23 +243,18 @@ function getCCTVList() {
 /*****************  선별진료소 / 안심병원  *****************/
 function getHospital() {
     let ServiceKey = "+sjo5YZ5yUmsPnmqL8EY2DoNkNxNY/n6fEgghhG8zsvw2pVDPBANrAr8MAJNQtYesL6tZtITX06tHL5EmvMxIw==";
-    // A0: 국민안심병원/97: 코로나검사 실시기관/99: 코로나 선별진료소 운영기관
-    let spclAdmTyCd = "99";
     let requestData = {
         ServiceKey,
         pageNo: 1,
-        numOfRows: 10,
-        spclAdmTyCd,
+        numOfRows: 10
     };
     $.ajax({
-        url: "http://apis.data.go.kr/B551182/pubReliefHospService/getpubReliefHospList",
+        url: "http://apis.data.go.kr/B551182/rprtHospService/getRprtHospService",
         type: "GET",
         data: requestData,
         dataType: "xml",
         success: (response) => {
-            // 지역으로 필터하는 기능이 없기 때문에, 모든 데이터를 불러오고 파싱해야한다.
-            // 위도, 경도 없음
-            console.log(response);
+            console.log("호흡기 의원", response);
         }
     })
 
