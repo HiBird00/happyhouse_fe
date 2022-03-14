@@ -64,6 +64,10 @@ $(function () {
             getStoreList(divId, key, 1, index, code);
         }
     })
+
+    // getCCTVList();
+    // getHospital();
+    getSeoulResidentStat();
 })
 
 function getJusoByCode(data, name) {
@@ -207,3 +211,92 @@ function makeStoreList(data) {
 
     $("#store-list").append(storeList);
 }
+
+
+/*****************  CCTV  *****************/
+/*****************  CCTV  *****************/
+/*****************  CCTV  *****************/
+const seoulKey = "4955426858776e68363059744f7875";
+
+function getCCTVList() {
+    let startIdx = 1;
+    let endIdx = 5;
+    let gu = "강남구";
+    let url = `http://openapi.seoul.go.kr:8088/${seoulKey}/json/safeOpenCCTV/${startIdx}/${endIdx}/${gu}`;
+    $.ajax({
+        url,
+        type: "GET",
+        dataType: "json",
+        success: (response) => {
+            console.log(response);
+        }
+    })
+}
+
+/*****************  선별진료소 / 안심병원  *****************/
+function getHospital() {
+    let ServiceKey = "+sjo5YZ5yUmsPnmqL8EY2DoNkNxNY/n6fEgghhG8zsvw2pVDPBANrAr8MAJNQtYesL6tZtITX06tHL5EmvMxIw==";
+    // A0: 국민안심병원/97: 코로나검사 실시기관/99: 코로나 선별진료소 운영기관
+    let spclAdmTyCd = "99";
+    let requestData = {
+        ServiceKey,
+        pageNo: 1,
+        numOfRows: 10,
+        spclAdmTyCd,
+    };
+    $.ajax({
+        url: "http://apis.data.go.kr/B551182/pubReliefHospService/getpubReliefHospList",
+        type: "GET",
+        data: requestData,
+        dataType: "xml",
+        success: (response) => {
+            // 지역으로 필터하는 기능이 없기 때문에, 모든 데이터를 불러오고 파싱해야한다.
+            // 위도, 경도 없음
+            console.log(response);
+        }
+    })
+
+}
+
+
+/*****************  서울 인구 통계  *****************/
+function readTextFile(file) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", file, false);
+    xmlhttp.send(null);
+
+    if (xmlhttp.status === 200) {
+        return xmlhttp.responseText;
+    }
+    return null;
+}
+
+function txtToJson(data, cIdx) {
+    const stpData = data.split('\n');
+    // 첫 줄은 컬럼
+    const columns = stpData[cIdx].split("\t");
+    let jsonData = [];
+
+    // txt파일을 json객체로 변환하여 배열에 추가
+    for (let i = cIdx + 1; i < stpData.length; i++) {
+        let temp = stpData[i].split("\t");
+        let json = columns.reduce(function (newJson, column, idx) {
+            newJson[column] = temp[idx];
+            return newJson;
+        }, {});
+        jsonData.push(json);
+    }
+    return jsonData;
+}
+
+function getSeoulResidentStat() {
+    let files = ["./xls/seoul_age.txt", "./xls/seoul_foreigner.txt"];
+    let name = ["연령통계", "외국인통계"];
+    let cIdx = [0, 1];
+    files.forEach((file, idx) => {
+        const data = readTextFile(file);
+        console.log(name[idx], txtToJson(data, cIdx[idx]));
+    })
+
+}
+
