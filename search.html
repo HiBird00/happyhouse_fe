@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/search.css"/>
+    <title>상권조회</title>
+</head>
+<body>
+    
+        <div class="search-left">
+            <!--로고창 나오기-->
+            <div>
+                <div class="left-top">
+                    <p><img src="img/Logo.png" alt="" width="200"></p>
+                </div>
+            </div>
+            <!--검색창 나오기-->
+            <div class="left-middle-search">
+                <div class="left-select-city">
+                    <select name="dong"> 
+                    <option value="none">동</option>
+                    </select>
+                    <select name="gu">
+                    <option value="none">구</option>
+                    </select>
+                    <select name="city">
+                    <option value="none">시/도</option>
+                    </select>
+                </div>
+                <div class="left-search-btn">
+                    <button type="submit" value="main-search-btn"></button>
+                </div>
+            </div >
+            <!--즐겨찾기 나오기-->
+            <div class="left-middle-likes">
+                <div>
+                    <h2>관심지역을 등록해주세요</h2>
+                </div>
+                <div>
+                    <!--해당부분은 각자 버튼을 누르면 각자 즐겨찾기를 등록할 수 있도록 버튼으로 했습니다.-->
+                    <button id="likes-btn1">즐겨찾기1</button>
+                    <button id="likes-btn2">즐겨찾기2</button>
+                    <button id="likes-btn3">즐겨찾기3</button>
+                </div>
+            </div>
+            <!--주변상권 나오기-->
+            <div class="left-bottom-stores">
+                <div>
+                    <h2>주변상권 입니다</h2>
+                </div>
+                <!--주변상권 list는 js로 넣을 예정입니다. 임의로 스크롤이 작동하는지 보았습니다.-->
+                <div class="wrap">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="search-right">
+            지도가 나타날 공간입니다.
+        </div>
+    
+</body>
+</html>
