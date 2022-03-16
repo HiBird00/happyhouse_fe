@@ -271,10 +271,8 @@ window.onload = function () {
       return;
     }
 
-
     window.open("./notice-writing.html", "mp", "width=400, height=400, left=500, top=300");
   });
-
 }
 
 $(document).ready(function () {
@@ -286,18 +284,45 @@ $(document).ready(function () {
   }
 
   getNotice();
+
+  if (localStorage.getItem("login") === "true" && user?.id === 'admin') {
+    $("#notice-list button").css("display", "");
+  }
+
+  $(document).on("click", "#notice-edit-btn", function () {
+    let index = $(this).parents()[1].getAttribute("id").slice(3);
+    let modifyData = {
+      ...notices[index],
+      index
+    };
+    localStorage.setItem("notice-modify", JSON.stringify(modifyData));
+    window.open("./notice-writing.html", "mp", "width=400, height=400, left=500, top=300");
+  })
+
+  $(document).on("click", "#notice-delete-btn", function () {
+    if (confirm("게시글을 삭제할까요?")) {
+      let index = $(this).parents()[1].getAttribute("id").slice(3);
+      notices.splice(index, 1);
+      localStorage.setItem('notice', JSON.stringify(notices));
+      location.reload();
+    }
+
+  })
 });
 
+var notices;
 function getNotice() {
-  let notices = localStorage.getItem('notice');
+  notices = localStorage.getItem('notice');
   if (notices) {
     notices = JSON.parse(notices);
     let noticeList = ``;
-    notices.forEach(function (notice) {
+    notices.forEach(function (notice, idx) {
       noticeList += `
-        <tr>
+        <tr id="nid${idx}">
           <td>${notice.title}</td>
           <td>${notice.content}</td>
+          <td><button type="button" id="notice-edit-btn" style="display:none;">수정</button></td>
+          <td><button type="button" class="btn-danger" id="notice-delete-btn" style="display:none;">삭제</button></td>
         </tr>
       `;
     })

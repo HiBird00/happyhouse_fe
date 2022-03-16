@@ -6,3 +6,12 @@
 .loading {
   margin: 0 auto;
 }
+
+.notice-tbody {
+  vertical-align: middle !important;
+}
+
+.notice-tbody button {
+  padding: 0px 10px;
+  font-size: 12px;
+}
