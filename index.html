@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- MAP JS File -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bf2076ef2d12fa1a7ddfbff4ae3f43b&libraries=services,clusterer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- FIXME: map.js불러오는 곳-->
+  <script type="text/javascript" src="assets/js/popup-register.js"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/list.js"></script>
+  <script src="assets/js/main.js"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- jQuery library -->
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <title>HappyHouse</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <!--<link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!--  Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- MAP CSS File -->
+  <link href="assets/css/map.css" rel="stylesheet">
+  <link href="assets/css/list.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.7.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- FIXME:======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light"><a href="index.html"><span><img src="assets/img/Logo.png"></span></a></h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">LOGIN</a></li>
+            <li><a class="nav-link scrollto" href="#services">Notice</a></li>
+            <li><a class="nav-link scrollto " href="#portfolio">HOUSES</a></li>
+            <!--<li><a class="nav-link scrollto" href="#team">Team</a></li>-->
+            <li><a class="nav-link scrollto" href="#contact">MORE</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            회원정보
+          </button>
+            <div class="dropdown-menu" id="profile-list" aria-labelledby="dropdownMenuButton">
+          </div>
+        </div>
+
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <div id="welcome"></div>
+      <h2>살고 싶은 동네의 주택 실거래 정보를 알고싶다면</h2>
+      <a href="#about" class="btn-get-started scrollto">LOGIN/JOINUS</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- FIXME: ======= 로그인 Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <h2> 로그인 하세요</h2>
+            <h3> 로그인 하면 더 많은 정보를 알 수 있습니다.</h3>
+          </div>
+          <div class="col-lg-6 pt-3 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <input type="text" id="id" placeholder="id" style="color: gray;">
+            <input type="password" id="password" placeholder="password" style="color: gray"> 
+            <button class="btn-get-started" type="button" onclick="login()">LOGIN</button>
+          </div>
+          <div class="col-lg-6 btn-lg" data-aos="fade-left" data-aos-delay="200">
+            <button class="btn-get-started" style="width: 150px;" type="submit" id="btn-joinus">JOINUS</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!— FIXME: End 로그인Section —>
+
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+        <div class="row counters">
+          <div class="col-md-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>사용자</p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p>등록된 매물</p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>주변상권</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Counts Section -->
+
+
+
+    <!-- FIXME: ======= 공지사항 Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>공지사항</h2>
+              
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="container">       
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>제목</th>
+                          <th>내용</th>
+                        </tr>
+                      </thead>
+                      <tbody id="notice-list">
+                      </tbody>
+                    </table>
+                    <button id="btn-notice" style="padding-left: 20px; padding-right:20px; border-radius: 5px;">글쓰기</button>
+                  </div>
+                </div>        
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- FIXME: End  공지사항 Section -->
+
+    <!-- FIXME: 주택 실거래가 Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" style="height: 800px; overflow:auto;">
+
+        <div class="section-title" data-aos="fade-left">
+          <h2>주택 실거래가 정보</h2>
+          <p>관심있는 지역의 실거래가 정보를 확인하세요!</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="row d-flex form-select-wrapper">
+              <select class="form-select col" name="main-city">
+                <option value="">시/도</option>
+              </select>
+              <select  class="form-select col" name="main-gu">
+                <option value="">시/군/구</option>
+              </select>
+              <select  class="form-select col" name="main-dong">
+                <option value="">읍/면/동</option>
+              </select>
+              <select  class="form-select col" name="main-ri">
+                <option value="">리</option>
+              </select>
+              <select class="form-select col" name="main-year">
+                <option value="">년</option>
+              </select>
+              <select  class="form-select col" name="main-month">
+                <option value="">월</option>
+              </select>
+              <div class="col">
+                <button type="button" id="apt-search-btn">검색하기</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 d-flex justify-content-center mt-3">
+            <ul id="portfolio-flters">
+              <!-- <li class="filter-active">All</li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12">
+                      <!-- Fixed header table-->
+                      <div class="table-responsive">
+                          <table class="table table-fixed">
+                              <thead>
+                                  <tr>
+                                      <th scope="col" class="col-1">#</th>
+                                      <th scope="col" class="col-3">아파트명</th>
+                                      <th scope="col" class="col-3">주소</th>
+                                      <th scope="col" class="col-3">전용면적</th>
+                                      <th scope="col" class="col-3">거래금액</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="apt-list">
+                            
+                              </tbody>
+                              <div id="apt-progress" class="loading" ></div>
+                            
+                          </table>
+                      </div><!-- End -->
+        </div>
+      </div>
+    </section>
+    <!-- FIXME: End 주택실거래가 Section -->
+
+  
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>주변상권 리스트</h2>
+              <p>주변상권이나 성별분포도</p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div id="store-progress"></div>
+              <div class="swiper-wrapper" id="store-list">
+
+                
+<!-- 
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                    <h3>John Larson</h3>
+                    <h4>Entrepreneur</h4>
+                  </div>
+                </div>End testimonial item -->
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+    
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="section-title">
+          <h2>MORE INFO</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+          <p>지역을 선택하세요</p>
+        </div>
+        <div>
+          <div class="row d-flex form-select-wrapper">
+            <select class="form-select col" name="city">
+              <option value="">시/도</option>
+            </select>
+            <select  class="form-select col" name="gu">
+              <option value="">시/군/구</option>
+            </select>
+          </div>
+          <div class="row d-flex mt-2 form-select-wrapper">
+              <select  class="form-select col" name="dong">
+                <option value="">읍/면/동</option>
+              </select>
+              <select  class="form-select col" name="ri">
+                <option value="">리</option>
+              </select>
+          </div>
+          <p class="mt-3">거래일자</p>
+          <div class="row d-flex form-select-wrapper">
+            <select class="form-select col" name="year">
+              <option value="">년</option>
+            </select>
+            <select  class="form-select col" name="month">
+              <option value="">월</option>
+            </select>
+          </div>
+          <div>
+            <button type="button" id="juso-search-btn" class="form-select-btn">조회</button>
+          </div>
+        </div>
+        <div>
+          <button type="button" id="hospital-search-btn" class="btn-outline-danger">신속항원검사/PCR 검사 가능 병원 조회</button>
+        </div>
+      </div>
+
+
+      <!-- 지도 부분 입니다. -->
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+        <div id="mapwrap"> 
+          <!-- 지도가 표시될 div -->
+          <div id="map" style="width:100%;height:500px;"></div>
+          <!-- 지도 위에 표시될 마커 카테고리 -->
+          <div class="category">
+              <ul>
+                  <li id="aptMenu" onclick="changeMarker('apt')">
+                      <span class="ico_comm ico_apt"><img src="img2/map/apt.png" /></span>
+                      아파트
+                  </li>
+                  <li id="storeMenu" onclick="changeMarker('store')">
+                      <span class="ico_comm ico_store"><img src="img2/map/store.png" /></span>
+                      상권
+                  </li>
+                  <li id="cctvMenu" onclick="changeMarker('cctv')">
+                    <span class="ico_comm ico_cctv"><img src="img2/map/cctv.png" /></span>
+                    cctv
+                </li>
+              </ul>
+          </div>
+        </div>
+        <!-- <iframe style="border:0; width: 100%; height: 500px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe> -->
+        <div class="info mt-4">
+          <i class="bi bi-geo-alt"></i>
+          <h4>Location:</h4>
+          <p id="map-detail-location"></p>
+        </div>
+        <!-- <div class="row">
+          <div class="col-lg-6 mt-4">
+            <div class="info">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>info@example.com</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="info w-100 mt-4">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+1 5589 55488 55s</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer"></footer>
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>HappyHouse</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/ -->
+          Made by <a href="https://bootstrapmade.com/">SOEUL10_김수현_이수연</a>
+        </div>
+      </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

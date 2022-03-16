@@ -1,0 +1,76 @@
+#mapwrap {
+  position: relative;
+  overflow: hidden;
+}
+.category,
+.category * {
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+.category {
+  position: absolute;
+  overflow: hidden;
+  top: 10px;
+  left: 10px;
+  width: 170px;
+  height: 55px;
+  z-index: 10;
+  border: 1px solid black;
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+}
+.category .menu_selected {
+  background: #ff5f4a;
+  color: #fff;
+  border-left: 1px solid #915b2f;
+  border-right: 1px solid #915b2f;
+  margin: 0 -1px;
+}
+.category li {
+  list-style: none;
+  float: left;
+  width: 55px;
+  height: 55px;
+  padding: 5px;
+  cursor: pointer;
+}
+.category .ico_comm {
+  display: block;
+  margin: 0 auto 2px;
+  width: 22px;
+  height: 26px;
+}
+
+.category .ico_comm img {
+  position: relative;
+  width: 35px;
+  height: 30px;
+  left: -5px;
+}
+
+.ico_cctv img {
+  height: 35px !important;
+  bottom: 5px;
+}
+
+.form-select-wrapper {
+  margin: unset;
+  gap: 5px;
+}
+
+.form-select-btn {
+  margin: unset;
+  float: right;
+  margin-top: 10px;
+  width: 80px;
+}
+
+#hospital-search-btn {
+  margin: unset;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+}
