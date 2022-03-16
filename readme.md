@@ -59,8 +59,6 @@
 <br>
 ![공지사항등록](/uploads/f103bc83a8ddaf6e9c6d1abf0ef722f2/공지사항등록.png)
 <br>
-![image](/uploads/5b05d869062cffbb3828d15cbde8b73d/image.png)
-<br>
 ![image](/uploads/60143299dbcb3e6bd4722d2709cda5dc/image.png)
 <br>
 ![image](/uploads/a3c6313baa4454bb7b883968295bafcf/image.png)
