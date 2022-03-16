@@ -73,8 +73,10 @@ $(function () {
 
         if (code) {
             console.log('code', code, index);
-            $("#apt-list").empty()
-            $("#store-list").empty()
+            $("#apt-list").empty();
+            $("#store-list").empty();
+            $("#apt-progress").empty();
+            $("#store-progress").empty();
             $("#apt-progress").append(`<div class="spinner-border text-primary"></div>`);
             $("#store-progress").append(`<div class="spinner-border text-primary"></div>`);
             getAptList(code.slice(0, 5), code.slice(-5), year + month, 1);    // 아파트 리스트를 출력하기 위해 시/구 코드, 동 코드, 날짜, 페이지 수를 파라미터로 전송합니다.
@@ -197,7 +199,7 @@ function getStoreList(divId, key, pageNo, index, originCode) {
     let requestData = {
         serviceKey: "+sjo5YZ5yUmsPnmqL8EY2DoNkNxNY/n6fEgghhG8zsvw2pVDPBANrAr8MAJNQtYesL6tZtITX06tHL5EmvMxIw==",
         pageNo,
-        numOfRows: "5",
+        numOfRows: "500",
         divId,
         key,
         type: 'json'

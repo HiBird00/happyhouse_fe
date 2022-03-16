@@ -535,7 +535,7 @@ function getCCTVList() {
         type: "GET",
         dataType: "json",
         success: (response) => {
-            if (response.safeOpenCCTV.row.length) {
+            if (response.safeOpenCCTV?.row.length) {
                 makeCCTVList(response.safeOpenCCTV.row);
             }
         }
