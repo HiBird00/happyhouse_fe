@@ -5,7 +5,7 @@
 **메인화면입니다. 맨 상단의 카테고리에 해당하는 구역을 누르면 그 구역으로 스크롤이 이동하도록 구현하였습니다**.<br>
 **아직 로그인을 하지 않은 상태이므로 왼쪽 상단의 회원정보를 클릭하면 '로그인해주시기바랍니다' 라는 문구가 뜹니다.**<br>
 <br>
-![MAIN1](/uploads/dde45592872f64461e37c0729aebe503/MAIN1.png)
+<img width="1519" alt="1" src="https://user-images.githubusercontent.com/48594896/159166573-3fe9fdf3-c17c-48e7-be4c-85b2c7aacb59.png">
 
 <br>
 <br>
@@ -19,10 +19,10 @@
 **또한 왼쪽 상단의 회원정보가 MY PROFILE 과 SIGN OUT을 할 수 있는 토글형식의 메뉴로 바뀝니다.**<br>
 
 <br>
-![RESISTER](/uploads/6f365d2466a6d02509bd739e81468d10/RESISTER.png)
-![LOGIN_FAIL](/uploads/854a119b7cef59ce94f54fbc5031cfee/LOGIN_FAIL.png)
-![LOGIN_SUCCESS](/uploads/959b893b44e5a82283c49a9f10f11922/LOGIN_SUCCESS.png)
-![MAIN_AFTER_LOGIN](/uploads/d4e1501a7ac05d069b4450e14b00b9d9/MAIN_AFTER_LOGIN.png)
+<img width="1450" alt="2" src="https://user-images.githubusercontent.com/48594896/159166582-b17aa0a9-e71c-42c3-87be-8f249771cce7.png">
+<img width="1358" alt="3" src="https://user-images.githubusercontent.com/48594896/159166588-8a7a10cd-c08a-4721-827b-4fbeece214fa.png">
+<img width="1346" alt="4" src="https://user-images.githubusercontent.com/48594896/159166594-7064cb4b-0acd-4c34-9d88-cd4c2a19de8e.png">
+<img width="1524" alt="5" src="https://user-images.githubusercontent.com/48594896/159166601-41766c6b-a5ec-435f-bbc8-f3cc70b2339f.png">
 
 <br>
 <br>
@@ -34,10 +34,10 @@
 **DELETE MY ACCOUNT는 로컬스토리지의 user의 정보 값을 삭제해준 후, login을 false로 만들어주고 메인화면으로 넘어갑니다.**<br>
 
 <br>
-![회원정보출력](/uploads/126673135e165ac2bee918ea5294fcf8/회원정보출력.png)
-![회원정보수정](/uploads/a472bf7843f574205b7deb41b1f5b2f4/회원정보수정.png)
-![회원정보변경후](/uploads/934819cc63b498975b70e3f54df6eb23/회원정보변경후.png)
-![회원탈퇴](/uploads/813c53b250f7a433574aab9bcd543404/회원탈퇴.png)
+<img width="1296" alt="6" src="https://user-images.githubusercontent.com/48594896/159166605-94bf61ca-d06e-40f2-acbd-66c003f89f5c.png">
+<img width="1238" alt="7" src="https://user-images.githubusercontent.com/48594896/159166606-ef1940df-cce4-4d5e-933a-875327b00037.png">
+<img width="1436" alt="8" src="https://user-images.githubusercontent.com/48594896/159166609-73bf4530-6777-4223-9c8b-1b15edbc3a2a.png">
+<img width="1309" alt="9" src="https://user-images.githubusercontent.com/48594896/159166614-70169f42-8667-4a76-aa6e-839d6d105174.png">
 
 <br>
 <br>
@@ -53,17 +53,17 @@
 **삭제 버튼 클릭 시, 해당 글을 삭제할 수 있습니다.**<br>
 
 <br>
-![공지사항관리자](/uploads/ab4b93dfba4566cc6f7c75702124d6ed/공지사항관리자.png)
+<img width="1569" alt="10" src="https://user-images.githubusercontent.com/48594896/159166619-5ab0d5c4-f1ba-4ce3-a650-2a13a7dde151.png">
 <br>
-![공지사항글쓰기](/uploads/0798d385034def9af8fe542832302ce3/공지사항글쓰기.png)
+<img width="936" alt="11" src="https://user-images.githubusercontent.com/48594896/159166620-b5100d23-0d66-4eab-b227-74d321589423.png">
 <br>
-![공지사항등록](/uploads/f103bc83a8ddaf6e9c6d1abf0ef722f2/공지사항등록.png)
+<img width="1495" alt="12" src="https://user-images.githubusercontent.com/48594896/159166621-c5ec3984-da8c-4c17-9dc6-c87d87b85fb4.png">
 <br>
-![image](/uploads/60143299dbcb3e6bd4722d2709cda5dc/image.png)
+![13](https://user-images.githubusercontent.com/48594896/159166706-f36e6b8a-9727-451e-a52a-68728875015b.png)
 <br>
-![image](/uploads/a3c6313baa4454bb7b883968295bafcf/image.png)
+![14](https://user-images.githubusercontent.com/48594896/159166708-5a41781c-b1cd-4da3-b129-a0426af1b043.png)
 <br>
-![image](/uploads/5caf3376a106cf6ec4cf7628e3eff297/image.png)
+![15](https://user-images.githubusercontent.com/48594896/159166709-9bf53da9-578c-4265-a35f-c225492feeeb.png)
 
 <br>
 <br>
@@ -75,8 +75,9 @@
 **'주변상권정보'도 똑같은 selector에서 값을 가져와 리스트 카드형식으로 출력해 줍니다.**<br>
 
 <br>
-![주택실거래가정보](/uploads/7aed16e9bf73a361b114bed1034cb101/주택실거래가정보.png)
-![주변상가정보](/uploads/94e1840f7e8690b75b078e98163b677b/주변상가정보.png)
+<img width="1475" alt="16" src="https://user-images.githubusercontent.com/48594896/159166627-f61444a0-7cb6-45ea-8c5f-70f72fb89e8f.png">
+<br>
+<img width="1565" alt="17" src="https://user-images.githubusercontent.com/48594896/159166629-2f65deea-c55b-4cd5-b1dc-3ccf2cc44d59.png">
 
 <br>
 <br>
@@ -90,9 +91,11 @@
 
 <br>
 
-![MOREINFO_아파트](/uploads/8103be32406fd0096c460ead11554ac1/MOREINFO_아파트.png)
-![MOREINFO_상권](/uploads/9a71ad441da9f0c10f01ceb3909847d3/MOREINFO_상권.png)
-![MOREINFO_씨씨티비](/uploads/dd8e4a226cfb46ebfd2e8e048122d515/MOREINFO_씨씨티비.png)
+![18](https://user-images.githubusercontent.com/48594896/159166630-dc093b62-2bb9-4d6d-b726-f653bb2220ea.png)
+<br>
+![19](https://user-images.githubusercontent.com/48594896/159166632-46bf67a0-13b2-4269-9180-0ac8276c0c91.png)
+<br>
+![20](https://user-images.githubusercontent.com/48594896/159166634-cf57039a-a705-45e5-aeea-f5fe4b9c1ca5.png)
 
 <br>
 <br>
@@ -106,5 +109,6 @@
 - 데이터를 총 3번에 걸쳐서 호출하기 때문에, 잠시 기다려주세요.<br>
 <br>
 
-![신속항원ZOOMIN](/uploads/d5d259c781dd98add426aa7bb36b37b4/신속항원ZOOMIN.png)
-![신속항원ZOOMOUT](/uploads/ae572d1c0f97df2afc48669b2bfad085/신속항원ZOOMOUT.png)
+<img width="1486" alt="21" src="https://user-images.githubusercontent.com/48594896/159166635-c897bc8a-0f88-4be8-aee2-4d323d253760.png">
+<br>
+<img width="1495" alt="22" src="https://user-images.githubusercontent.com/48594896/159166643-b677fc71-5ebe-4743-9800-e77c20c7ede6.png">
